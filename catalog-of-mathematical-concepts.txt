@@ -1,0 +1,4 @@
+Problem 18 - longest path in a directed acyclic graph (DAG)
+Problem 67 - longest path in a DAG
+Problem 66 - quadratic Diophantine equations (Pell equations) using the continued fractions method
+Problem 373 - circumscribed triangles
