@@ -14,15 +14,18 @@ public class Problem373_2 {
 	public void run() {
 		int sum = 0;
 
-		int N = 1200;
-		for(long a = 1; a <= 2*N; a++) {
-			for(long b = (int) ceil((((double) a)+1)/2); b <= a; b++) {
-				for(long c = a+1-b; c <= b; c++) {
+		int N = 10000000;
+		// for the radius to be an integer, gcd(a,b,c) must be a multiple of 2, therefore, a,b,c must always be even
+		for(long a = 2; a <= 2*N; a+=2) {
+			if(a % 1000 == 0)
+				System.out.println(a);
+			for(long b = ceilEven(a); b <= a; b+=2) {
+				for(long c = a-b; c <= b; c+=2) {
 					double r = (a*b*c) / sqrt((a+b+c)*(a+b-c)*(a-b+c)*(-a+b+c));
+					
 					if(floor(r) == r) {
-						if(r <= N && r > 0) {
-//							System.out.println(a + ", " + b + ", " + c + " = " + r);
-//							System.out.println("\t\tgcd(a,b,c) = " + gcd(a,b,c));
+						if(r <= N) {
+//							System.out.println(a + "," + b + "," + c + "," + (int) r + "," + gcd(a,b,c) + "," + (b*b + c*c) + "," + (a*a));
 							sum += r;
 						}
 					}
@@ -33,11 +36,13 @@ public class Problem373_2 {
 		System.out.println("sum = " + sum);
 	}
 	
-	int gcd(long a, long b, long c) {
-		return (int) MathExt.gcd(MathExt.gcd(a,b), MathExt.gcd(b,c));
+	long ceilEven(long a) {
+		long ceil = (long) ceil((((double) a)+1)/2);
+		if(ceil % 2 != 0) ceil++;
+		return ceil;
 	}
 	
-	boolean relativelyPrime(int m, int n, int k) {
-		return MathExt.gcd(m,n) == 1 && MathExt.gcd(n,k) == 1 && MathExt.gcd(m,k) == 1;
+	int gcd(long a, long b, long c) {
+		return (int) MathExt.gcd(MathExt.gcd(a,b), MathExt.gcd(b,c));
 	}
 }
