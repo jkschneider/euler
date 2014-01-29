@@ -3,7 +3,11 @@ package com.euler.p62
 import static java.lang.Math.*
 import com.euler.PermutationGenerator
 
-Long permute(Long n, int[] positions) {
+Set<String> first1000Cubes = (1..5000).collect { n -> (n*n*n).toString() }
+
+int targetPermCount = 5
+
+String permute(Long n, int[] positions) {
 	String nStr = n.toString()
 	StringBuffer permuted = new StringBuffer()
 	for(int i = 0; i < positions.length; i++) {
@@ -11,29 +15,36 @@ Long permute(Long n, int[] positions) {
 			return null
 		permuted.append(nStr[positions[i]])
 	}
-	return Long.parseLong(permuted.toString())
+	return permuted.toString()
 }
 
-int targetPermCount = 5
+long time = System.currentTimeMillis()
 
-nIter: for(Long i = 100;; i++) {
+nIter: for(Long i = 1000;; i++) {
 	Long n = i*i*i
-	println "Testing: " + n
+	println "Testing: ${i}^3 = $n"
+	if(n > Math.pow(5000, 3))
+		break;
+	
 	PermutationGenerator perm = new PermutationGenerator(n.toString().length())
 	
 	int permCount = 0
 	Set<Long> tested = []
+//	int permTested = 0
 	
 	while(perm.hasMore()) {
-		Long cube = permute(n, perm.getNext())
-		if(!cube || tested.contains(cube)) continue
+		def thisPerm = permute(n, perm.getNext())
 		
-		tested.add(cube)
-		double cubeRoot = Math.cbrt(cube)
-		if(floor(cubeRoot) == cubeRoot)
+		if(!tested.contains(thisPerm) && first1000Cubes.contains(thisPerm))
 			permCount++
+		tested.add(thisPerm)
+		
+//		if(perm.getTotal() - (++permTested) < targetPermCount)
+//			break
+		
 		if(permCount == targetPermCount) {
 			println n
+			println "time: " + (System.currentTimeMillis() - time)
 			break nIter
 		}
 	}
