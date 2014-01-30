@@ -1,29 +1,29 @@
 package com.euler.p66;
 
+import static java.lang.Math.*;
+
 public class Problem66 {
     public static void main(String[] args) {
         double D = 1000;
         
-        int maxX = 0;
+        long maxX = 0;
         
-        for(int d = 778; d <= D; d++) {
+        for(int d = 1; d <= D; d++) {
             double sqrtD = Math.sqrt(d);
-            if(sqrtD == (int) sqrtD)
+            if(floor(sqrtD) == sqrtD)
                 continue;
             
-            double y = d;
-            while(true) {
+            for(long y = d;; y++) {
                 double x = Math.sqrt(d*y*y + 1);
-                if(x == (int) x) {
+                if(floor(x) == x) {
                     if(x > maxX)
-                        maxX = (int) x;
-                    System.out.println("d = " + d + ", x = " + (int) x + ", y = " + (int) y);
+                        maxX = (long) x;
+                    System.out.println("d = " + d + ", x = " + (long) x + ", y = " + (long) y);
                     break;
                 }
-                y++;
             }
         }
         
-        System.out.println(maxX);
+        System.out.println("solution = " + maxX);
     }
 }
