@@ -1,10 +1,7 @@
 package com.euler.p62;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map.Entry;
 
 import com.google.common.base.Joiner;
@@ -17,25 +14,28 @@ public class Problem62 {
 		ListMultimap<String, Long> groupedCubes = ArrayListMultimap.create();
 
 		int totalPerms = 5;
-
+		Long least = null;
+		
 		Joiner joiner = Joiner.on("");
 		
 		int digits = 3;
-		nIter: for(Long n = 100L;; n++) {
+		for(long n = 100L;; n++) {
 			Long cube = n*n*n;
 			
 			if(cube.toString().length() > digits) {
 				digits = cube.toString().length();
 				
 				for(Entry<String, Collection<Long>> cubeGroup : groupedCubes.asMap().entrySet()) {
-					System.out.println(cubeGroup.getKey() + " " + cubeGroup.getValue().size());
 					if(cubeGroup.getValue().size() >= totalPerms) {
-						List<Long> sortedValues = new ArrayList(cubeGroup.getValue());
-						Collections.sort(sortedValues);
-						
-						System.out.println("solution = " + sortedValues);
-						break nIter;
+						Long leastCandidate = cubeGroup.getValue().iterator().next();
+						if(least == null || least >= leastCandidate)
+							least = leastCandidate;
 					}
+				}
+				
+				if(least != null) {
+					System.out.println("solution = " + least);
+					return;
 				}
 				
 				groupedCubes.clear();
@@ -47,5 +47,3 @@ public class Problem62 {
 		}
 	}
 }
-
-
