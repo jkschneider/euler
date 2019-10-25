@@ -1,6 +1,6 @@
 package com.euler;
 
-public class Problem14 {
+class Problem14 {
   public static void main(String[] args) {
     int maxLength = 1;
     long maxI = 1;

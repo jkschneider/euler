@@ -1,6 +1,6 @@
 package com.euler;
 
-public class Problem30 {
+class Problem30 {
   public static void main(String[] args) {
     int totalSum = 0;
     for (int i = 2; i < 236196; i++) {

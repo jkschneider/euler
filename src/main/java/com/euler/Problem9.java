@@ -5,15 +5,15 @@ package com.euler;
  *
  * @author Schneider
  */
-public class Problem9 {
-  static final int N = 5000000;
+class Problem9 {
+  private static final int N = 5000000;
 
   public static void main(String[] args) {
     long start = System.currentTimeMillis();
 
     long sum = 3;
 
-    boolean sieve[] = new boolean[N + 1];
+    boolean[] sieve = new boolean[N + 1];
     for (int i = 0; i < N + 1; i++)
       sieve[i] = true;
 

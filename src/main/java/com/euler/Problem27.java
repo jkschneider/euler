@@ -4,8 +4,8 @@ import com.euler.util.PrimeGenerator;
 
 import java.util.List;
 
-public class Problem27 {
-  static final int N = 100;
+class Problem27 {
+  private static final int N = 100;
 
   public static void main(String[] args) {
     int maxPrimes = 0;

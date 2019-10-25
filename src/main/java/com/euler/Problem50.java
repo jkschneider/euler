@@ -4,7 +4,7 @@ import com.euler.util.PrimeGenerator;
 
 import java.util.List;
 
-public class Problem50 {
+class Problem50 {
   public static void main(String[] args) {
     int answer = 0;
     int maxConsecutive = 0;

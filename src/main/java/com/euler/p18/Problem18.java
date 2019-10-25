@@ -1,6 +1,6 @@
 package com.euler.p18;
 
-public class Problem18 {
+class Problem18 {
   public static void main(String[] args) {
     BinaryNode root = TreeReader.parse("59\r\n" +
       "73 41\r\n" +

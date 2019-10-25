@@ -5,11 +5,11 @@ import com.euler.util.PermutationGenerator;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Problem32 {
+class Problem32 {
   public static void main(String[] args) {
     PermutationGenerator gen = new PermutationGenerator(9);
 
-    Set<Integer> products = new HashSet<Integer>();
+    Set<Integer> products = new HashSet<>();
 
     int[] indices;
     while (gen.hasMore()) {

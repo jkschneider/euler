@@ -3,12 +3,12 @@ package com.euler;
 import static java.lang.Math.*;
 
 // brute force
-public class Problem373 {
+class Problem373 {
   public static void main(String[] args) {
     int N = 1200;
     int sum = 0;
 
-    double rad = 0.0;
+    double rad;
     for (long c = 1; c < N * 2; c++) {
       for (long b = c; b < N * 2; b++) { // b >= a to avoid duplicate
         long a;

@@ -3,7 +3,7 @@ package com.euler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem26 {
+class Problem26 {
   public static void main(String[] args) {
     int maxCycle = 0;
     int maxCycleD = 0;
@@ -13,7 +13,7 @@ public class Problem26 {
       int numer = 1;
       while (numer < d) numer *= 10;
 
-      List<Integer> remainders = new ArrayList<Integer>();
+      List<Integer> remainders = new ArrayList<>();
 
       int remain = numer % d;
       while (!remainders.contains(remain)) {

@@ -9,7 +9,7 @@ public class PentagonalGenerator {
   }
 
   public static List<Long> pentagonals(long from, long to) {
-    List<Long> pentagonals = new ArrayList<Long>();
+    List<Long> pentagonals = new ArrayList<>();
     for (long i = from; i < to; i++)
       pentagonals.add((i * (3L * i - 1L)) / 2L);
     return pentagonals;

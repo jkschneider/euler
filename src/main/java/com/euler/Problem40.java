@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 @SuppressWarnings("serial")
-public class Problem40 {
+class Problem40 {
   public static void main(String[] args) {
     Queue<Integer> parts = new LinkedList<Integer>() {{
       push(1000000);

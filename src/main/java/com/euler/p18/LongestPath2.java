@@ -3,9 +3,9 @@ package com.euler.p18;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestPath2 {
+class LongestPath2 {
   public static long calculate(IWeightedVertex root) {
-    Map<IWeightedVertex, Long> lengthTo = new HashMap<IWeightedVertex, Long>();
+    Map<IWeightedVertex, Long> lengthTo = new HashMap<>();
     lengthTo.put(root, root.weight());
 
     calculateRec(root, lengthTo);

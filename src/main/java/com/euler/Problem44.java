@@ -5,9 +5,9 @@ import com.euler.util.PentagonalGenerator;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Problem44 {
+class Problem44 {
   public static void main(String[] args) {
-    Set<Long> pents = new HashSet<Long>(PentagonalGenerator.firstNPentagonals(10000));
+    Set<Long> pents = new HashSet<>(PentagonalGenerator.firstNPentagonals(10000));
 
     long leastDif = Long.MAX_VALUE;
 

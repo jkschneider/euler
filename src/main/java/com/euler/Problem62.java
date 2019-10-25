@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Map.Entry;
 
 
-public class Problem62 {
+class Problem62 {
   public static void main(String[] args) {
     ListMultimap<String, Long> groupedCubes = ArrayListMultimap.create();
 

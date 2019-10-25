@@ -4,7 +4,7 @@ import com.euler.util.PrimeGenerator;
 
 import java.util.List;
 
-public class Problem46 {
+class Problem46 {
   public static void main(String[] args) {
     List<Integer> primes = PrimeGenerator.primesLessThan(10000);
 

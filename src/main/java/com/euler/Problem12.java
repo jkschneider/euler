@@ -4,9 +4,9 @@ import com.euler.util.TriangleGenerator;
 
 import java.util.List;
 
-public class Problem12 {
+class Problem12 {
   public static void main(String[] args) {
-    int totalDivisors[] = new int[1000];
+    int[] totalDivisors = new int[1000];
 
     int thousand = 11;
     while (true) {

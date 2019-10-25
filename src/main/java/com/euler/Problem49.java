@@ -4,7 +4,7 @@ import com.euler.util.PrimeGenerator;
 
 import java.util.*;
 
-public class Problem49 {
+class Problem49 {
   public static void main(String[] args) {
     List<Integer> primes = PrimeGenerator.primesLessThan(10000);
     while (true) {
@@ -14,15 +14,10 @@ public class Problem49 {
         break;
     }
 
-    Map<String, List<Integer>> primePermutBuckets = new HashMap<String, List<Integer>>();
+    Map<String, List<Integer>> primePermutBuckets = new HashMap<>();
     for (Integer prime : primes) {
       String primeSorted = sortString(prime.toString());
-      List<Integer> primesInBucket = primePermutBuckets.get(primeSorted);
-
-      if (primesInBucket == null) {
-        primesInBucket = new ArrayList<Integer>();
-        primePermutBuckets.put(primeSorted, primesInBucket);
-      }
+      List<Integer> primesInBucket = primePermutBuckets.computeIfAbsent(primeSorted, k -> new ArrayList<>());
 
       primesInBucket.add(prime);
     }
@@ -46,7 +41,7 @@ public class Problem49 {
     }
   }
 
-  public static String sortString(String s) {
+  private static String sortString(String s) {
     char[] chars = s.toCharArray();
     Arrays.sort(chars);
     return new String(chars);

@@ -5,25 +5,25 @@ import com.euler.util.PrimeGenerator;
 import java.math.BigInteger;
 import java.util.List;
 
-public class Problem60 {
-  static int MAX_PRIME_SIEVE = 1000000;
+class Problem60 {
+  private static final int MAX_PRIME_SIEVE = 1000000;
 
-  static List<Integer> primes = PrimeGenerator.primesLessThan(MAX_PRIME_SIEVE);
-  static List<Integer> testPrimes = PrimeGenerator.primesLessThan(5000);
+  private static final List<Integer> primes = PrimeGenerator.primesLessThan(MAX_PRIME_SIEVE);
+  private static final List<Integer> testPrimes = PrimeGenerator.primesLessThan(5000);
 
-  static int minSum = Integer.MAX_VALUE;
-  static String minSumNums = "NONE FOUND";
+  private static int minSum = Integer.MAX_VALUE;
+  private static String minSumNums = "NONE FOUND";
 
   public static void main(String[] args) {
     int N = 4;
-    int selections[] = new int[N];
+    int[] selections = new int[N];
     testConcatsRecurse(selections, N, 1, 0);
 
     System.out.println(minSum);
     System.out.println(minSumNums);
   }
 
-  private static final void testConcatsRecurse(int[] selected, int initialLevel, int level, int priorLevelPos) {
+  private static void testConcatsRecurse(int[] selected, int initialLevel, int level, int priorLevelPos) {
     pTest:
     for (int p = priorLevelPos + 1; p < testPrimes.size() - initialLevel + level; p++) {
       selected[level - 1] = testPrimes.get(p);
@@ -34,16 +34,16 @@ public class Problem60 {
 
       if (level == initialLevel) {
         int sum = 0;
-        String sumNums = "";
+        StringBuilder sumNums = new StringBuilder();
         for (int pSelect : selected) {
           sum += pSelect;
-          sumNums += pSelect + " ";
+          sumNums.append(pSelect).append(" ");
         }
         System.out.println("tested: " + sumNums);
 
         if (minSum > sum) {
           minSum = sum;
-          minSumNums = sumNums;
+          minSumNums = sumNums.toString();
         }
       }
 
@@ -52,7 +52,7 @@ public class Problem60 {
     }
   }
 
-  public static boolean testConcat(int p1, int p2) {
+  private static boolean testConcat(int p1, int p2) {
     int concat1 = Integer.parseInt(p1 + "" + p2);
     int concat2 = Integer.parseInt(p2 + "" + p1);
 

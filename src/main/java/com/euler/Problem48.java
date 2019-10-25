@@ -2,7 +2,7 @@ package com.euler;
 
 import java.math.BigInteger;
 
-public class Problem48 {
+class Problem48 {
   public static void main(String[] args) {
     BigInteger b = BigInteger.valueOf(1);
     for (int i = 2; i <= 1000; i++)

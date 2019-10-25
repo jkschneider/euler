@@ -6,17 +6,17 @@ import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Problem55 {
+class Problem55 {
   public static void main(String[] args) {
-    Set<BigInteger> numbersNotLychrel = new HashSet<BigInteger>();
-    Set<BigInteger> numbersLychrel = new HashSet<BigInteger>();
+    Set<BigInteger> numbersNotLychrel = new HashSet<>();
+    Set<BigInteger> numbersLychrel = new HashSet<>();
 
     for (int n = 1; n < 10000; n++) {
-      if (numbersNotLychrel.contains(n))
+      if (numbersNotLychrel.contains(BigInteger.valueOf(n)))
         continue;
 
       BigInteger n0 = BigInteger.valueOf(n);
-      Set<BigInteger> numbersInThisTest = new HashSet<BigInteger>();
+      Set<BigInteger> numbersInThisTest = new HashSet<>();
       boolean lychrel = true;
 
       for (long i = 0; i < 50; i++) {
@@ -40,7 +40,7 @@ public class Problem55 {
     System.out.println(numbersLychrel.size());
   }
 
-  public static BigInteger reversedDigits(BigInteger n) {
+  private static BigInteger reversedDigits(BigInteger n) {
     return new BigInteger(new StringBuffer(n.toString()).reverse().toString());
   }
 }

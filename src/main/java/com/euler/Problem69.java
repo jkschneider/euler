@@ -7,11 +7,11 @@ import static com.euler.util.MathExt.gcd;
 import static com.euler.util.PrimeTest.prime;
 
 class Problem69 {
-  int N = 1000000;
+  private final int N = 1000000;
 
-  Map<Integer, Integer> totientCache = new HashMap<Integer, Integer>();
+  private final Map<Integer, Integer> totientCache = new HashMap<>();
 
-  int totient(int n) {
+  private int totient(int n) {
     if (n == 1 || n == 2) return 1;
     Integer totient = totientCache.get(n);
 
@@ -36,14 +36,14 @@ class Problem69 {
     return totient;
   }
 
-  int firstFactor(int n) {
+  private int firstFactor(int n) {
     for (int i = 2; i <= Math.sqrt(n); i++)
       if (n % i == 0)
         return i;
     return n;
   }
 
-  void run() {
+  private void run() {
     int maxN = 0;
     double max = 0;
 

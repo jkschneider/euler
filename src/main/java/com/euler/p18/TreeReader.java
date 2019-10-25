@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 
-public class TreeReader {
+class TreeReader {
   public static BinaryNode parse(String rawTree) {
     BinaryNode root = new BinaryNode();
 
@@ -13,7 +13,7 @@ public class TreeReader {
       int previousLine = 0;
       BinaryNode[] previousLineNodes = null;
 
-      String line = null;
+      String line;
       while ((line = reader.readLine()) != null) {
         if (previousLine == 0) {
           root.weight = Long.parseLong(line);

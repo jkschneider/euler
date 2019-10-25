@@ -19,23 +19,15 @@ public class PermutationGenerator {
     reset();
   }
 
-  public void reset() {
+  private void reset() {
     for (int i = 0; i < a.length; i++) {
       a[i] = i;
     }
     numLeft = new BigInteger(total.toString());
   }
 
-  public BigInteger getNumLeft() {
-    return numLeft;
-  }
-
-  public BigInteger getTotal() {
-    return total;
-  }
-
   public boolean hasMore() {
-    return numLeft.compareTo(BigInteger.ZERO) == 1;
+    return numLeft.compareTo(BigInteger.ZERO) > 0;
   }
 
   private static BigInteger getFactorial(int n) {
@@ -47,10 +39,9 @@ public class PermutationGenerator {
   }
 
   public String getNextAsDigitString() {
-    int indices[] = getNext();
-    StringBuffer buf = new StringBuffer();
-    for (int i = 0; i < indices.length; i++)
-      buf.append((char) ('0' + indices[i]));
+    int[] indices = getNext();
+    StringBuilder buf = new StringBuilder();
+    for (int index : indices) buf.append((char) ('0' + index));
     return buf.toString();
   }
 

@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 import static com.euler.util.MathExt.factorialBig;
 
-public class Problem53 {
+class Problem53 {
   public static void main(String[] args) {
     int totalExceeding1Million = 0;
     BigInteger threshhold = BigInteger.valueOf(1000000L);

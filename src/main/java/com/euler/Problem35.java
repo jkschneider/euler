@@ -5,11 +5,11 @@ import com.euler.util.PrimeGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem35 {
+class Problem35 {
   public static void main(String[] args) {
     List<Integer> primes = PrimeGenerator.primesLessThan(1000000);
 
-    List<Integer> circular = new ArrayList<Integer>();
+    List<Integer> circular = new ArrayList<>();
 
     for (Integer prime : primes) {
       String primeString = prime.toString();

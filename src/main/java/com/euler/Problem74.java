@@ -5,14 +5,14 @@ import com.euler.util.MathExt;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem74 {
+class Problem74 {
   public static void main(String[] args) {
     int count = 0;
 
-    for (Long i = 69L; i < 1000000; i++) {
+    for (long i = 69L; i < 1000000; i++) {
       Long i0 = i;
 
-      List<Long> nonRepeatingTerms = new ArrayList<Long>();
+      List<Long> nonRepeatingTerms = new ArrayList<>();
 
       while (!nonRepeatingTerms.contains(i0)) {
         nonRepeatingTerms.add(i0);

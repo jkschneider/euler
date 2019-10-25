@@ -2,7 +2,7 @@ package com.euler;
 
 import java.math.BigInteger;
 
-public class Problem63 {
+class Problem63 {
   public static void main(String[] args) {
     int count = 0;
     for (int p = 0; p < 100; p++) {

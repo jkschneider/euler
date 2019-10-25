@@ -2,8 +2,8 @@ package com.euler;
 
 import java.math.BigInteger;
 
-public class Problem16 {
-  static final BigInteger ten = new BigInteger("10");
+class Problem16 {
+  private static final BigInteger ten = new BigInteger("10");
 
   public static void main(String[] args) {
     long start = System.currentTimeMillis();

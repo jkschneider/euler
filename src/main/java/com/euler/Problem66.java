@@ -2,7 +2,7 @@ package com.euler;
 
 import static java.lang.Math.floor;
 
-public class Problem66 {
+class Problem66 {
   public static void main(String[] args) {
     double D = 1000;
 
@@ -18,7 +18,7 @@ public class Problem66 {
         if (floor(x) == x) {
           if (x > maxX)
             maxX = (long) x;
-          System.out.println("d = " + d + ", x = " + (long) x + ", y = " + (long) y);
+          System.out.println("d = " + d + ", x = " + (long) x + ", y = " + y);
           break;
         }
       }

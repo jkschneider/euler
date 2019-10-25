@@ -1,6 +1,6 @@
 package com.euler;
 
-public class Problem33 {
+class Problem33 {
   public static void main(String[] args) {
     for (int i = 10; i <= 99; i++) {
       int digit = i % 10;

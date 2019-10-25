@@ -4,7 +4,7 @@ import com.euler.util.PrimeGenerator;
 
 import java.util.List;
 
-public class Problem37 {
+class Problem37 {
   public static void main(String[] args) {
     int sum = 0;
 

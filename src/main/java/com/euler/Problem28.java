@@ -1,6 +1,6 @@
 package com.euler;
 
-public class Problem28 {
+class Problem28 {
   public static void main(String[] args) {
     int sum = 1; // center of spiral
     int d = 1;

@@ -5,13 +5,13 @@ package com.euler;
  *
  * @author Schneider
  */
-public class Problem7 {
-  static final int N = 300000;
+class Problem7 {
+  private static final int N = 300000;
 
   public static void main(String[] args) {
     int nthCounter = 0;
 
-    boolean sieve[] = new boolean[N + 1];
+    boolean[] sieve = new boolean[N + 1];
     for (int i = 0; i < N + 1; i++)
       sieve[i] = true;
 

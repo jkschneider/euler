@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TriangleGenerator {
-  public static List<Long> firstNTriangles(long N) {
-    return triangles(1, N);
-  }
 
   public static List<Long> triangles(long from, long to) {
-    List<Long> triangles = new ArrayList<Long>();
+    List<Long> triangles = new ArrayList<>();
     for (long i = from; i < to; i++) {
       // we do this to prevent ourselves from overflowing the Long type too quickly...
       if (i % 2 == 0)

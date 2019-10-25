@@ -2,7 +2,7 @@ package com.euler;
 
 import java.util.Arrays;
 
-public class Problem52 {
+class Problem52 {
   public static void main(String[] args) {
     for (int x = 1; x < 1000000; x++) {
       boolean sameDigits = true;
@@ -21,7 +21,7 @@ public class Problem52 {
     }
   }
 
-  public static String sortedDigits(Integer n) {
+  private static String sortedDigits(Integer n) {
     char[] chars = n.toString().toCharArray();
     Arrays.sort(chars);
     return new String(chars);

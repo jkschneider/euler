@@ -7,23 +7,23 @@ import java.util.Map;
 
 public class Problem61 {
   static class Figurate {
-    public int p;
-    public FigurateType type;
+    int p;
+    FigurateType type;
 
-    public int left() {
+    int left() {
       return p / 100;
     }
 
-    public int right() {
+    int right() {
       return p % 100;
     }
 
   }
 
-  static enum FigurateType {
+  enum FigurateType {
     Triangle, Square, Pentagonal, Hexagonal, Heptagonal, Octagonal;
 
-    public int iter(int n) {
+    int iter(int n) {
       switch (this) {
         case Triangle:
           return (n * (n + 1)) / 2;
@@ -42,12 +42,12 @@ public class Problem61 {
     }
   }
 
-  private static FigurateType seedType = FigurateType.Octagonal; // fewest octagonal seeds of any type
-  private static FigurateType[] consideredTypes = FigurateType.values(); //new FigurateType[] { FigurateType.Triangle, FigurateType.Square, FigurateType.Pentagonal };
+  private static final FigurateType seedType = FigurateType.Octagonal; // fewest octagonal seeds of any type
+  private static final FigurateType[] consideredTypes = FigurateType.values(); //new FigurateType[] { FigurateType.Triangle, FigurateType.Square, FigurateType.Pentagonal };
 
-  private static List<Figurate> seeds = new ArrayList<Figurate>();
-  private static Map<Integer, List<Figurate>> figuratesByLeft = new HashMap<Integer, List<Figurate>>();
-  private static Map<Integer, List<Figurate>> figuratesByRight = new HashMap<Integer, List<Figurate>>();
+  private static final List<Figurate> seeds = new ArrayList<>();
+  private static final Map<Integer, List<Figurate>> figuratesByLeft = new HashMap<>();
+  private static final Map<Integer, List<Figurate>> figuratesByRight = new HashMap<>();
 
   private static void initFigurates() {
     for (FigurateType figurateType : consideredTypes) {
@@ -63,9 +63,9 @@ public class Problem61 {
 
           Integer left = p / 100, right = p % 100;
           if (!figuratesByLeft.containsKey(left))
-            figuratesByLeft.put(left, new ArrayList<Figurate>());
+            figuratesByLeft.put(left, new ArrayList<>());
           if (!figuratesByRight.containsKey(right))
-            figuratesByRight.put(right, new ArrayList<Figurate>());
+            figuratesByRight.put(right, new ArrayList<>());
 
           figuratesByLeft.get(left).add(figurate);
           figuratesByRight.get(right).add(figurate);
@@ -92,7 +92,7 @@ public class Problem61 {
 
   }
 
-  public static boolean recurseFindNext(Figurate[] select, int n) {
+  private static boolean recurseFindNext(Figurate[] select, int n) {
     List<Figurate> nexts = figuratesByLeft.get(select[n - 1].right());
     if (nexts == null) return false;
 

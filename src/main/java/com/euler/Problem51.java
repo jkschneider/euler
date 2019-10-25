@@ -8,12 +8,12 @@ import java.util.Map;
 
 import static com.euler.util.MathExt.digits;
 
-public class Problem51 {
+class Problem51 {
   public static void main(String[] args) {
     int N = 8;
 
     List<Integer> primes = PrimeGenerator.primesLessThan(1000000);
-    Map<String, Integer> buckets = new HashMap<String, Integer>();
+    Map<String, Integer> buckets = new HashMap<>();
 
     int i = 0;
     for (Integer p : primes) {
@@ -25,7 +25,7 @@ public class Problem51 {
         if (pattern == null)
           continue;
 
-        int bucketCount = buckets.containsKey(pattern) ? buckets.get(pattern) : 0;
+        int bucketCount = buckets.getOrDefault(pattern, 0);
         buckets.put(pattern, ++bucketCount);
 
         if (bucketCount == N - 1) {
@@ -47,7 +47,7 @@ public class Problem51 {
 
     boolean similarity = false;
 
-    StringBuffer diffPattern = new StringBuffer();
+    StringBuilder diffPattern = new StringBuilder();
 
     Character firstPDiff = null;
     Character firstQDiff = null;

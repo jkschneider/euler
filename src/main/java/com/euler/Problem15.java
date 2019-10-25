@@ -1,10 +1,10 @@
 package com.euler;
 
-public class Problem15 {
-  final static int SIZE = 20;
+class Problem15 {
+  private final static int SIZE = 20;
 
   public static void main(String[] args) {
-    long grid[][] = new long[SIZE + 1][SIZE + 1];
+    long[][] grid = new long[SIZE + 1][SIZE + 1];
 
     for (int i = 0; i <= SIZE; i++) {
       grid[0][i] = 1;

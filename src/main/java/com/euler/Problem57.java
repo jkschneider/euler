@@ -2,7 +2,7 @@ package com.euler;
 
 import java.math.BigInteger;
 
-public class Problem57 {
+class Problem57 {
   public static void main(String[] args) {
     long start = System.currentTimeMillis();
 

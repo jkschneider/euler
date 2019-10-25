@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Problem21 {
+class Problem21 {
   public static void main(String[] args) {
-    Map<Integer, Integer> f = new HashMap<Integer, Integer>();
+    Map<Integer, Integer> f = new HashMap<>();
 
     for (int i = 0; i < 10000; i++) {
       int sum = 0;

@@ -2,11 +2,11 @@ package com.euler;
 
 import com.euler.util.PermutationGenerator;
 
-public class Problem43 {
+class Problem43 {
   public static void main(String[] args) {
     PermutationGenerator g = new PermutationGenerator(10);
 
-    int divisors[] = new int[]{2, 3, 5, 7, 11, 13, 17};
+    int[] divisors = new int[]{2, 3, 5, 7, 11, 13, 17};
 
     long sum = 0;
     while (g.hasMore()) {

@@ -3,18 +3,18 @@ package com.euler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem90 {
+class Problem90 {
   private static final String[] squares = new String[]{"01", "04", "09", "16", "25", "36", "49", "64", "81"};
 
   public static void main(String[] args) {
     long start = System.currentTimeMillis();
 
-    List<List<Integer>> dicePossibilities = new ArrayList<List<Integer>>();
+    List<List<Integer>> dicePossibilities = new ArrayList<>();
     for (int i1 = 0; i1 < 7; i1++) {
       for (int i2 = i1 + 1; i2 < 8; i2++) {
         for (int i3 = i2 + 1; i3 < 9; i3++) {
           for (int i4 = i3 + 1; i4 < 10; i4++) {
-            List<Integer> die = new ArrayList<Integer>();
+            List<Integer> die = new ArrayList<>();
             for (int digit = 0; digit < 10; digit++) {
               if (digit != i1 && digit != i2 && digit != i3 && digit != i4)
                 die.add(digit);
@@ -39,7 +39,7 @@ public class Problem90 {
     System.out.println(count);
   }
 
-  public static boolean testSquares(List<Integer> die1, List<Integer> die2) {
+  private static boolean testSquares(List<Integer> die1, List<Integer> die2) {
     for (String square : squares) {
       int digit1 = square.charAt(0) - 48;
       int digit2 = square.charAt(1) - 48;
@@ -54,13 +54,11 @@ public class Problem90 {
     return true;
   }
 
-  public static final boolean hasDigit(List<Integer> die, int digit) {
+  private static boolean hasDigit(List<Integer> die, int digit) {
     if (die.contains(digit))
       return true;
     if (digit == 6 && die.contains(9))
       return true;
-    if (digit == 9 && die.contains(6))
-      return true;
-    return false;
+    return digit == 9 && die.contains(6);
   }
 }

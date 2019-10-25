@@ -12,7 +12,7 @@ public class BinaryNode implements IWeightedVertex {
 
   @Override
   public Collection<IWeightedVertex> connectedVertices() {
-    List<IWeightedVertex> connected = new ArrayList<IWeightedVertex>();
+    List<IWeightedVertex> connected = new ArrayList<>();
     if (left != null)
       connected.add(left);
     if (right != null)

@@ -4,12 +4,12 @@ import com.euler.util.MathExt;
 
 import static java.lang.Math.*;
 
-public class Problem373_2 {
+class Problem373_2 {
   public static void main(String[] args) {
     new Problem373_2().run();
   }
 
-  public void run() {
+  private void run() {
     int sum = 0;
 
     int N = 10000000;
@@ -34,13 +34,10 @@ public class Problem373_2 {
     System.out.println("sum = " + sum);
   }
 
-  long ceilEven(long a) {
+  private long ceilEven(long a) {
     long ceil = (long) ceil((((double) a) + 1) / 2);
     if (ceil % 2 != 0) ceil++;
     return ceil;
   }
 
-  int gcd(long a, long b, long c) {
-    return (int) MathExt.gcd(MathExt.gcd(a, b), MathExt.gcd(b, c));
-  }
 }

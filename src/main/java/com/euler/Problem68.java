@@ -4,17 +4,17 @@ import com.euler.util.PermutationGenerator;
 
 import java.util.TreeSet;
 
-public class Problem68 {
-  int N = 5;
+class Problem68 {
+  private final int N = 5;
 
   public static void main(String[] args) {
     new Problem68().run();
   }
 
-  public void run() {
+  private void run() {
     PermutationGenerator permGen = new PermutationGenerator(N * 2);
 
-    TreeSet<String> solutions = new TreeSet<String>();
+    TreeSet<String> solutions = new TreeSet<>();
 
     int[] inners = new int[N + 1];
     int[] outers = new int[N];
@@ -38,14 +38,14 @@ public class Problem68 {
     System.out.println("solution = " + solutions.descendingIterator().next());
   }
 
-  public int[][] groups(int[] inners, int[] outers) {
+  private int[][] groups(int[] inners, int[] outers) {
     int[][] groups = new int[N][3];
     for (int i = 0; i < N; i++)
       groups[i] = new int[]{outers[i], inners[i], inners[i + 1]};
     return groups;
   }
 
-  public boolean isSolution(int[][] groups) {
+  private boolean isSolution(int[][] groups) {
     int[] totals = new int[N];
     for (int i = 0; i < N; i++)
       totals[i] = groups[i][0] + groups[i][1] + groups[i][2];
@@ -56,7 +56,7 @@ public class Problem68 {
     return true;
   }
 
-  public String digitString(int[][] groups) {
+  private String digitString(int[][] groups) {
     int indexOfSmallest = 0;
     int[] smallest = groups[0];
     outer:
@@ -72,11 +72,11 @@ public class Problem68 {
       indexOfSmallest = i;
     }
 
-    StringBuffer digitString = new StringBuffer();
+    StringBuilder digitString = new StringBuilder();
     for (int i = indexOfSmallest; i < N; i++)
-      digitString.append(new Integer(groups[i][0]).toString() + groups[i][1] + groups[i][2]);
+      digitString.append(Integer.toString(groups[i][0])).append(groups[i][1]).append(groups[i][2]);
     for (int i = 0; i < indexOfSmallest; i++)
-      digitString.append(new Integer(groups[i][0]).toString() + groups[i][1] + groups[i][2]);
+      digitString.append(Integer.toString(groups[i][0])).append(groups[i][1]).append(groups[i][2]);
 
     return digitString.toString();
   }

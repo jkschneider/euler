@@ -55,7 +55,7 @@ public class MathExt {
 
     if (test.length() % 2 != 0)
       mid++;
-    StringBuffer secondBuffer = new StringBuffer(test.substring(mid));
+    StringBuilder secondBuffer = new StringBuilder(test.substring(mid));
 
     return firstHalf.equals(secondBuffer.reverse().toString());
   }
@@ -71,7 +71,7 @@ public class MathExt {
   }
 
   public static List<Long> divisors(Long N) {
-    List<Long> divisors = new ArrayList<Long>();
+    List<Long> divisors = new ArrayList<>();
     divisors.add(1L);
 
     for (long i = 2L; i <= N / 2; i++)

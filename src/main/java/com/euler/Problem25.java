@@ -2,9 +2,9 @@ package com.euler;
 
 import java.math.BigInteger;
 
-public class Problem25 {
-  static final int TOTAL_DIGITS = 1000;
-  static final BigInteger test = BigInteger.valueOf(10).pow(TOTAL_DIGITS - 1);
+class Problem25 {
+  private static final int TOTAL_DIGITS = 1000;
+  private static final BigInteger test = BigInteger.valueOf(10).pow(TOTAL_DIGITS - 1);
 
   public static void main(String[] args) {
     BigInteger p0 = BigInteger.valueOf(0);

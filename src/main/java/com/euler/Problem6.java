@@ -1,7 +1,7 @@
 package com.euler;
 
-public class Problem6 {
-  final static long N = 100;
+class Problem6 {
+  private final static long N = 100;
 
   public static void main(String[] args) {
     long sumOfSquares = 0;

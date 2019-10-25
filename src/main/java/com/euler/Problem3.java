@@ -1,6 +1,6 @@
 package com.euler;
 
-public class Problem3 {
+class Problem3 {
   public static void main(String[] args) {
     long n = 600851475143L;
     for (long i = 2; i <= n / i; i++) {

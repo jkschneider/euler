@@ -10,8 +10,6 @@ public class PrimeTest {
   private static final BigInteger THREE = new BigInteger("3");
   private static final BigInteger SIX = new BigInteger("6");
 
-  public static final int[] aValues = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41};
-
   public static boolean prime(long n) {
     return prime(BigInteger.valueOf(n));
   }

@@ -2,11 +2,11 @@ package com.euler;
 
 import java.math.BigInteger;
 
-public class Problem56 {
+class Problem56 {
 
   public static void main(String[] args) {
     int maxSum = 0;
-    int digitCounts[] = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int[] digitCounts = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     BigInteger one = new BigInteger("1");
     for (BigInteger a = new BigInteger("1"); a.compareTo(new BigInteger("100")) <= 0; a = a.add(one)) {

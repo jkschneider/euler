@@ -2,7 +2,7 @@ package com.euler;
 
 import com.euler.util.PrimeTest;
 
-public class Problem58 {
+class Problem58 {
   public static void main(String[] args) {
     double primes = 0;
     int diag = 1;
