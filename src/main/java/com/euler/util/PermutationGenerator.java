@@ -10,61 +10,61 @@ public class PermutationGenerator {
   private BigInteger numLeft;
   private BigInteger total;
 
-  public PermutationGenerator (int n) {
+  public PermutationGenerator(int n) {
     if (n < 1) {
-      throw new IllegalArgumentException ("Min 1");
+      throw new IllegalArgumentException("Min 1");
     }
     a = new int[n];
-    total = getFactorial (n);
-    reset ();
+    total = getFactorial(n);
+    reset();
   }
 
-  public void reset () {
+  public void reset() {
     for (int i = 0; i < a.length; i++) {
       a[i] = i;
     }
-    numLeft = new BigInteger (total.toString ());
+    numLeft = new BigInteger(total.toString());
   }
 
-  public BigInteger getNumLeft () {
+  public BigInteger getNumLeft() {
     return numLeft;
   }
 
-  public BigInteger getTotal () {
+  public BigInteger getTotal() {
     return total;
   }
 
-  public boolean hasMore () {
-    return numLeft.compareTo (BigInteger.ZERO) == 1;
+  public boolean hasMore() {
+    return numLeft.compareTo(BigInteger.ZERO) == 1;
   }
 
-  private static BigInteger getFactorial (int n) {
+  private static BigInteger getFactorial(int n) {
     BigInteger fact = BigInteger.ONE;
     for (int i = n; i > 1; i--) {
-      fact = fact.multiply (new BigInteger (Integer.toString (i)));
+      fact = fact.multiply(new BigInteger(Integer.toString(i)));
     }
     return fact;
   }
-  
+
   public String getNextAsDigitString() {
-      int indices[] = getNext();
-      StringBuffer buf = new StringBuffer();
-      for(int i = 0; i < indices.length; i++)
-          buf.append((char) ('0' + indices[i]));
-      return buf.toString();
+    int indices[] = getNext();
+    StringBuffer buf = new StringBuffer();
+    for (int i = 0; i < indices.length; i++)
+      buf.append((char) ('0' + indices[i]));
+    return buf.toString();
   }
 
-  public int[] getNext () {
+  public int[] getNext() {
 
-    if (numLeft.equals (total)) {
-      numLeft = numLeft.subtract (BigInteger.ONE);
+    if (numLeft.equals(total)) {
+      numLeft = numLeft.subtract(BigInteger.ONE);
       return a;
     }
 
     int temp;
 
     int j = a.length - 2;
-    while (a[j] > a[j+1]) {
+    while (a[j] > a[j + 1]) {
       j--;
     }
 
@@ -88,7 +88,7 @@ public class PermutationGenerator {
       s++;
     }
 
-    numLeft = numLeft.subtract (BigInteger.ONE);
+    numLeft = numLeft.subtract(BigInteger.ONE);
     return a;
   }
 }

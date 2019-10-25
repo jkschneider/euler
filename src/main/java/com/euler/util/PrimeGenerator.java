@@ -6,43 +6,43 @@ import java.util.List;
 import java.util.Set;
 
 public class PrimeGenerator {
-    public static List<Integer> primesLessThan(final int N) {
-        List<Integer> primes = new ArrayList<Integer>();
+  public static List<Integer> primesLessThan(final int N) {
+    List<Integer> primes = new ArrayList<Integer>();
 
-        boolean sieve[] = new boolean[N];
-        for (int i = 0; i < N; i++)
-            sieve[i] = true;
+    boolean sieve[] = new boolean[N];
+    for (int i = 0; i < N; i++)
+      sieve[i] = true;
 
-        for (int i = 2; i < N; i++) {
-            if (sieve[i]) {
-                primes.add(i);
+    for (int i = 2; i < N; i++) {
+      if (sieve[i]) {
+        primes.add(i);
 
-                int j = 2;
-                while (j * i < N)
-                    sieve[j++ * i] = false;
-            }
-        }
-
-        return primes;
+        int j = 2;
+        while (j * i < N)
+          sieve[j++ * i] = false;
+      }
     }
 
-    public static Set<Integer> primeSetLessThan(final int N) {
-        Set<Integer> primes = new HashSet<Integer>();
+    return primes;
+  }
 
-        boolean sieve[] = new boolean[N];
-        for (int i = 0; i < N; i++)
-            sieve[i] = true;
+  public static Set<Integer> primeSetLessThan(final int N) {
+    Set<Integer> primes = new HashSet<Integer>();
 
-        for (int i = 2; i < N; i++) {
-            if (sieve[i]) {
-                primes.add(i);
+    boolean sieve[] = new boolean[N];
+    for (int i = 0; i < N; i++)
+      sieve[i] = true;
 
-                int j = 2;
-                while (j * i < N)
-                    sieve[j++ * i] = false;
-            }
-        }
+    for (int i = 2; i < N; i++) {
+      if (sieve[i]) {
+        primes.add(i);
 
-        return primes;
+        int j = 2;
+        while (j * i < N)
+          sieve[j++ * i] = false;
+      }
     }
+
+    return primes;
+  }
 }
